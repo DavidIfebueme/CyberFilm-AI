@@ -3,10 +3,28 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function TwoColumnForm() {
   const [activeTab, setActiveTab] = useState("page1");
+  const [loading, setLoading] = useState(false);
+
 
   function handleTabClick(tab) {
     setActiveTab(tab);
   }
+
+  function loadTextnImagenImage() {
+    setLoading(true);
+    loading &&
+    setTimeout(() => {  
+      setLoading(false);
+    }, 1000);
+
+    //const text 
+    const text = document.getElementById("text");
+    
+    //const image
+    const image = document.getElementById("image");
+    
+  }
+
 
   return (
     <div className="container">
@@ -105,7 +123,7 @@ function TwoColumnForm() {
               <input type="text" className="form-control" />
             </div>
             <div className="form-group">
-              <label >Input 9</label>
+              <label >Challenges</label>
               <input type="text" className="form-control"  />
             </div>
           </form>
@@ -116,22 +134,27 @@ function TwoColumnForm() {
             <div className="form-group">
               <label >1. ACT 1</label>
               <input type="text" className="form-control"/>
+              <button class="btn btn-outline-secondary" type="button" onClick={loadTextnImage}>Next</button>
             </div>
             <div className="form-group">
               <label >2. ACT 2</label>
               <input type="text" className="form-control"/>
+              <button class="btn btn-outline-secondary" type="button" onClick={loadTextnImage}>Next</button>
             </div>
             <div className="form-group">
               <label >3. MIDPOINT</label>
               <input type="text" className="form-control"/>
+              <button class="btn btn-outline-secondary" type="button" onClick={loadTextnImage}>Next</button>
             </div>
             <div className="form-group">
               <label >4. ACT 2 PART 2</label>
               <input type="text" className="form-control"/>
+              <button class="btn btn-outline-secondary" type="button" onClick={loadTextnImage}>Next</button>
             </div>
             <div className="form-group">
               <label >5. ACT 3</label>
               <input type="text" className="form-control"/>
+              <button class="btn btn-outline-secondary" type="button" onClick={loadTextnImage}>Next</button>
             </div>           
           </form>
         
