@@ -10,18 +10,12 @@ function TwoColumnForm() {
     setActiveTab(tab);
   }
 
-  function loadTextnImagenImage() {
+  function loadTextnImage() {
     setLoading(true);
     loading &&
     setTimeout(() => {  
       setLoading(false);
     }, 1000);
-
-    //const text 
-    const text = document.getElementById("text");
-    
-    //const image
-    const image = document.getElementById("image");
     
   }
 
