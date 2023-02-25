@@ -16,8 +16,38 @@ function Tab(props) {
   );
 }
 
+function TabNavigation(props) {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const handleNextClick = () => {
+    setActiveTab(activeTab + 1);
+    const nextTab = document.getElementById(`tab${activeTab + 1}`);
+    nextTab.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const tabs = props.tabs.map((tab, index) => (
+    <Tab
+      key={index}
+      id={`tab${index}`}
+      title={tab.title}
+      isActive={index === activeTab}
+      onClick={() => setActiveTab(index)}
+    />
+  ));
+
+  return (
+    <div>
+      <ul className="nav nav-tabs">{tabs}</ul>
+      {activeTab < props.tabs.length - 1 && (
+        <button onClick={handleNextClick}>Next Page</button>
+      )}
+    </div>
+  );
+}
+
+
 // Component for the form fields for Plots page 
-function Page1Form() {
+function Page1Form(props) {
   return (
     <form>
       <div className="form-group">
@@ -56,12 +86,15 @@ function Page1Form() {
         <label>Setting</label>
         <input type="text" className="form-control" />
       </div>
+      <button type="button" className="btn btn-primary" onClick={props.onNext}>
+        Next Page
+      </button>
     </form>
   );
 }
 
 // Component for the form fields for Characters page
-function Page2Form() {
+function Page2Form(props) {
   return (
     <form>
       <div className="form-group">
@@ -104,12 +137,15 @@ function Page2Form() {
         <label>Skills</label>
         <input type="text" className="form-control" />
       </div>
+      <button type="button" className="btn btn-primary" onClick={props.onNext}>
+        Next Page
+      </button>
     </form>
   );
 }
 
 // Component for the form fields for Acts page 
-function Page3Form() {
+function Page3Form(props) {
   return (
     <form>
       <div className="form-group">
@@ -123,13 +159,15 @@ function Page3Form() {
       <div className="form-group">
         <label>Act 3</label>
         <textarea className="form-control" rows="5"></textarea>
-      </div>
+      </div><button type="button" className="btn btn-primary" onClick={props.onNext}>
+        Next Page
+      </button>
     </form>
   );
 }
 
 // Component for the form fields for Storyboards page 
-function Page4Form() {
+function Page4Form(props) {
   const [scenes, setScenes] = useState([]);
 
   const handleGenerateScenes = () => {
@@ -164,13 +202,15 @@ function Page4Form() {
             <button onClick={handleGenerateScenes}>Generate Scenes</button>
           </div>
         </div>
+        <button type="button" className="btn btn-primary" onClick={props.onNext}>
+        Next Page
+      </button>
       </form>
 
       {scenes.length > 0 && <SceneBreakdown scenes={scenes} />}
     </div>
   );
 }
-
 
 // Component for displaying scene breakdown
 function SceneBreakdown(props) {
@@ -202,7 +242,6 @@ function SceneBreakdown(props) {
     </div>
   );
 }
-
 
 // Components for the Main app
 function TwoColumnForm() {
