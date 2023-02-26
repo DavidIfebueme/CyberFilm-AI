@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: #f8f9fa;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.navbar ul.nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.navbar ul.nav li {
+  margin-right: 10px;
+}
+
+.navbar ul.nav li:last-child {
+  margin-right: 0;
+}
+
+.navbar ul.nav li button {
+  background-color: #fff;
+  border: none;
+  border-radius: 3px;
+  color: #444;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 5px;
+  padding: 8px 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.navbar ul.nav li button:hover {
+  background-color: #e9ecef;
+  color: #444;
+}
