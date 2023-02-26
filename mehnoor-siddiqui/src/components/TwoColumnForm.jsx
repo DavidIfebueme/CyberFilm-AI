@@ -1,12 +1,16 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+
+
 
 // Component for a single tab in the tab navigation
 function Tab(props) {
   return (
     <li className="nav-item">
       <button
-        className={`nav-link ${props.isActive ? "active" : ""}`}
+        className={`nav-link ${props.isActive ? "active bg-primary text-dark" : ""}`}
         onClick={props.onClick}
         style={{ margin: '0.25rem' }}
       >
@@ -16,75 +20,149 @@ function Tab(props) {
   );
 }
 
-function TabNavigation(props) {
-  const [activeTab, setActiveTab] = useState(0);
-
-  const handleNextClick = () => {
-    setActiveTab(activeTab + 1);
-    const nextTab = document.getElementById(`tab${activeTab + 1}`);
-    nextTab.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const tabs = props.tabs.map((tab, index) => (
-    <Tab
-      key={index}
-      id={`tab${index}`}
-      title={tab.title}
-      isActive={index === activeTab}
-      onClick={() => setActiveTab(index)}
-    />
-  ));
-
-  return (
-    <div>
-      <ul className="nav nav-tabs">{tabs}</ul>
-      {activeTab < props.tabs.length - 1 && (
-        <button onClick={handleNextClick}>Next Page</button>
-      )}
-    </div>
-  );
-}
-
-
 // Component for the form fields for Plots page 
 function Page1Form(props) {
+  const generateIdea = (event) => {
+    // Your code to generate an idea for this field goes here
+    // You can use a library or write your own logic to generate the idea
+  };
+
   return (
     <form>
+    <div className="form-group">
+      <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Title</label>
+        <button
+          type="button"
+          className="btn"
+          onClick={generateIdea}
+        >
+          <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+        </button>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+      </div>
+    </div>
       <div className="form-group">
-        <label>Title</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Logline</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Logline</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Themes</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Themes</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Story Types</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Story Types</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Genres</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Genres</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Tone</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Tone</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Audience</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>Audience</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>B-Story</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div> 
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <div className="form-group">
-        <label>B-Story</label>
-        <input type="text" className="form-control" />
-      </div>
-      <div className="form-group">
-        <label>Setting</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Setting</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
       <button type="button" className="btn btn-primary" onClick={props.onNext}>
         Next Page
@@ -95,53 +173,175 @@ function Page1Form(props) {
 
 // Component for the form fields for Characters page
 function Page2Form(props) {
+  const generateIdea2 = (event) => {
+    // Your code to generate an idea for this field goes here
+    // You can use a library or write your own logic to generate the idea
+  };
+
   return (
     <form>
       <div className="form-group">
-        <label>Name</label>
-        <input type="text" className="form-control" />
+      <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Name</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+
       <div className="form-group">
-        <label>Character Arc</label>
-        <input type="text" className="form-control" />
+      <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Character Arc</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+
       <div className="form-group">
-        <label>Description</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+          <label style={{marginRight: '10px'}}>Description</label>
+          <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+            >
+              <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+      
       <div className="form-group">
-        <label>Personality</label>
-        <input type="text" className="form-control" />
-      </div>
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Personality</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+
       <div className="form-group">
-        <label>Archetypes</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Archetypes</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+
       <div className="form-group">
-        <label>Want</label>
-        <input type="text" className="form-control" />
-      </div>
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Want</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+
       <div className="form-group">
-        <label>Need</label>
-        <input type="text" className="form-control" />
-      </div>
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Need</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+
       <div className="form-group">
-        <label>Flaw</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
+        <label style={{marginRight: '10px'}}>Flaw</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+
       <div className="form-group">
-        <label>Strength</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Strength</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+
       <div className="form-group">
-        <label>Skills</label>
-        <input type="text" className="form-control" />
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}> 
+        <label style={{marginRight: '10px'}}>Skills</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea2}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
       </div>
+      
       <button type="button" className="btn btn-primary" onClick={props.onNext}>
         Next Page
       </button>
     </form>
-  );
+  );    
 }
 
 // Component for the form fields for Acts page 
@@ -247,11 +447,17 @@ function SceneBreakdown(props) {
 function TwoColumnForm() {
   const [activeTab, setActiveTab] = useState(0);
 
+  // define a function to handle "Next" button clicks
+  const handleNextButtonClick = () => {
+    // increment the active tab index and wrap around if it exceeds the number of tabs
+    setActiveTab((activeTab + 1) % 4);
+  };
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="nav navbar">
-          <ul className="nav navbar justify-content-between">
+    <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mr-auto">
             <Tab
               title="Plots"
               isActive={activeTab === 0}
@@ -274,11 +480,13 @@ function TwoColumnForm() {
             />
           </ul>
         </div>
+      </nav>
+      <div className="row">
         <div className="col-9">
-          {activeTab === 0 && <Page1Form />}
-          {activeTab === 1 && <Page2Form />}
-          {activeTab === 2 && <Page3Form />}
-          {activeTab === 3 && <Page4Form />}
+          {activeTab === 0 && <Page1Form onNext={handleNextButtonClick} />}
+          {activeTab === 1 && <Page2Form onNext={handleNextButtonClick} />}
+          {activeTab === 2 && <Page3Form onNext={handleNextButtonClick} />}
+          {activeTab === 3 && <Page4Form onNext={handleNextButtonClick} />}
         </div>
       </div>
     </div>
