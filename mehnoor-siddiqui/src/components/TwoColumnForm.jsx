@@ -346,20 +346,59 @@ function Page2Form(props) {
 
 // Component for the form fields for Acts page 
 function Page3Form(props) {
+  const generateIdea3 = (event) => {
+    // Your code to generate an idea for this field goes here
+    // You can use a library or write your own logic to generate the idea
+  };
+
   return (
     <form>
       <div className="form-group">
-        <label>Act 1</label>
-        <textarea className="form-control" rows="5"></textarea>
-      </div>
+        <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Act 1</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea3}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+
       <div className="form-group">
-        <label>Act 2</label>
-        <textarea className="form-control" rows="5"></textarea>
-      </div>
+      <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Act 2</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea3}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+        
       <div className="form-group">
-        <label>Act 3</label>
-        <textarea className="form-control" rows="5"></textarea>
-      </div><button type="button" className="btn btn-primary" onClick={props.onNext}>
+      <div className="input-group" style={{display: 'flex', alignItems: 'center'}}></div>
+        <label style={{marginRight: '10px'}}>Act 3</label>
+        <button
+            type="button"
+            className="btn"
+            onClick={generateIdea3}
+          >
+            <FontAwesomeIcon icon={faPlay} style={{fontSize: '0.75em', color: 'black', backgroundColor: 'transparent', borderWidth: '0.5px'}} />
+          </button>
+        </div>
+        <div className="input-group">
+          <input type="text" className="form-control" />
+        </div>
+
+      <button type="button" className="btn btn-primary" onClick={props.onNext}>
         Next Page
       </button>
     </form>
