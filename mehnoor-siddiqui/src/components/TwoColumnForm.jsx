@@ -59,6 +59,7 @@ function Page1Form(props) {
           <input type="text" className="form-control" />
         </div>
       </div>
+
       <div className="form-group">
         <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
         <label style={{marginRight: '10px'}}>Themes</label>
@@ -86,9 +87,18 @@ function Page1Form(props) {
           </button>
         </div>
         <div className="input-group">
-          <input type="text" className="form-control" />
+          <select class="form-select" value="">
+            <option value="" selected disabled hidden>Which plot archtypes(s) does your story follow?</option>
+            <option>Trapped with a Monster</option>
+            <option>Road Story</option>
+            <option>Magic Wish</option>
+            <option>David vs Goliath</option>
+            <option>Rite of Passage</option>
+            <option value="custom">Other</option>
+          </select>
         </div>
       </div>
+
       <div className="form-group">
         <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
         <label style={{marginRight: '10px'}}>Genres</label>
@@ -101,9 +111,19 @@ function Page1Form(props) {
           </button>
         </div>
         <div className="input-group">
-          <input type="text" className="form-control" />
+          <select class="form-select" value="">
+            <input type="text" className="form-control" />
+            <option value="" selected disabled hidden>What film categories does your story fall under?</option>
+            <option>Action</option>
+            <option>Comedy</option>
+            <option>Drama</option>
+            <option>Horror</option>
+            <option>Romance</option>
+            <option value="custom">Other</option>
+          </select>
         </div>
       </div>
+      
       <div className="form-group">
         <div className="input-group" style={{display: 'flex', alignItems: 'center'}}>
         <label style={{marginRight: '10px'}}>Tone</label>
@@ -208,7 +228,16 @@ function Page2Form(props) {
           </button>
         </div>
         <div className="input-group">
-          <input type="text" className="form-control" />
+        <select class="form-select" value="">
+            <input type="text" className="form-control" />
+            <option value="" selected disabled hidden>What's your character's transformation over story</option>
+            <option>Positive Change</option>
+            <option>Flat</option>
+            <option>Dissilusionment</option>
+            <option>Fall</option>
+            <option>Corruption</option>
+            <option value="custom">Other</option>
+          </select>
         </div>
       </div>
 
@@ -240,7 +269,16 @@ function Page2Form(props) {
           </button>
         </div>
         <div className="input-group">
-          <input type="text" className="form-control" />
+        <select class="form-select" value="">
+            <input type="text" className="form-control" />
+            <option value="" selected disabled hidden>What traits best describe your character?</option>
+            <option>Enthusiastic</option>
+            <option>Studious</option>
+            <option>Supportive</option>
+            <option>Generous</option>
+            <option>Independent</option>
+            <option value="custom">Other</option>
+          </select>
         </div>
 
       <div className="form-group">
@@ -255,7 +293,16 @@ function Page2Form(props) {
           </button>
         </div>
         <div className="input-group">
-          <input type="text" className="form-control" />
+        <select class="form-select" value="">
+            <input type="text" className="form-control" />
+            <option value="" selected disabled hidden>Which universal patterns best describe your character?</option>
+            <option>Hero</option>
+            <option>Magician</option>
+            <option>Lover</option>
+            <option>Outlaw</option>
+            <option>Explorer</option>
+            <option value="custom">Other</option>
+          </select>
         </div>
       </div>
 
