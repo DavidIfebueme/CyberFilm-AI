@@ -1,3 +1,4 @@
+import os
 """
 Django settings for CyberFilmAI project.
 
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--n(_k02_bmfe4w3b$4w%z7nm+6tl3^&5)b!@3fxcy3(&#x@4uz'
+SECRET_KEY = os.environ.setdefault('DJANGO_SECRET_KEY', 'django-insecure--n(_k02_bmfe4w3b$4w%z7nm+6tl3^&5)b!@3fxcy3(&#x@4uz') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,10 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'django.contrib.sessions', 
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ScreenplAI',
+    'ScreenplAI.apps.ScreenplaiConfig',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CyberFilmAI.urls'
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
