@@ -7,8 +7,3 @@ class PlotInputFieldsSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'logline', 'Themes', 'StoryTypes',
          'Genres', 'Tone', 'Audience', 'B_Story', 'Setting')
 
-class CharacterInputFieldsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CharacterInputFields
-        fields = ('name', 'character_arc', 'description', 'personality',
-         'archetypes', 'want', 'need', 'flaw','strength', 'skills' )

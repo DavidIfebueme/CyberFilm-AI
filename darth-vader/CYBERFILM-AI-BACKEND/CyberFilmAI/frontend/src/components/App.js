@@ -1,11 +1,11 @@
-import './App.css';
-import TwoColumnForm from './TwoColumnForm';
+import 'components/App.css';
+import TwoColumnForm from './TwoColumnForm.jsx';
 
 
 function App() {
   return (
    <div>
-    <TwoColumnForm/>
+    <TwoColumnForm.jsx/>
    </div>
   );
 }
