@@ -50,3 +50,11 @@ class StoryboardOutputField(models.Model):
 
     def get_plot_holes(self):
         return self.plot_holes.split(';')
+
+class PlotIdea(models.Model):
+    plot_input = models.ForeignKey(PlotInputFields, on_delete=models.CASCADE)
+    character_input = models.ForeignKey(CharacterInputFields, on_delete=models.CASCADE)
+    acts_output = models.ForeignKey(ActsOutputField, on_delete=models.CASCADE)
+    storyboard_output = models.ForeignKey(StoryboardOutputField, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
