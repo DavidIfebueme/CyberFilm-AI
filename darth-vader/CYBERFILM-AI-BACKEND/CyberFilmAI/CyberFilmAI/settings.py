@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ScreenplAI.apps.ScreenplaiConfig',
-    #'rest_framwework',
+    'rest_framework',
     'frontend.apps.FrontendConfig'
 ]
 
@@ -54,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'CyberFilmAI.urls'
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+#TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATES = [
     {
