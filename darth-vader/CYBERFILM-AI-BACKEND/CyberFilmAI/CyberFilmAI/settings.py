@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ScreenplAI.apps.ScreenplaiConfig',
+    #'rest_framwework',
+    'frontend.apps.FrontendConfig'
 ]
 
 MIDDLEWARE = [
